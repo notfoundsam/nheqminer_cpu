@@ -1,0 +1,8 @@
+version: '2'
+services:
+  miner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bash -c "./nheqminer_cpu -l zec-eu1.nanopool.org:6666 -u user/worker1 -p x -t 1"
+    working_dir: /app/nheqminer/Linux_cmake/nheqminer_cpu
