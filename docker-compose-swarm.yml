@@ -1,0 +1,16 @@
+version: '3'
+services:
+  miner:
+    image: notfoundsam/nheqminer_cpu_rpi:latest
+    working_dir: /app/nheqminer/Linux_cmake/nheqminer_cpu
+    command: bash -c "./nheqminer_cpu -l zec-eu1.nanopool.org:6666 -u t1YGD5niMSAWpDLFArrqecj9RzpsiBMoxhi/worker1 -p x -t 1"
+    deploy:
+      replicas: 1
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 100M
+        reservations:
+          cpus: '0.50'
+          memory: 20M
+  
